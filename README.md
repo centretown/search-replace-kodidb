@@ -1,5 +1,7 @@
-## Correcting MariaDB Kodi database to a different network.
-I currently have about 30 devices on my rooming house network. Previously my problem was solved by adding the server ip address and name to each client's ***hosts*** file. Back then there were fewer clients and no Android boxes. I didn't have access the ***hosts*** on these boxes.  So I regenerated the database with hard coded ip addresses. 
+## Introduction
+I currently have about 30 devices on my rooming house network and at times have had to move my data to a different server or network. Previously my problem was solved by adding the server ip address and name to each client's ***hosts*** file. 
+
+Back then there were fewer clients and no Android boxes. I didn't have access the ***hosts*** on these devices and didn't want to deal with possibility that it could vary between devices and Android versions.  So I took the onerous approach and regenerated the database with hard coded ip addresses. 
 
 #### Take a dump and see what's there.
 ```bash
