@@ -1,0 +1,74 @@
+sudo mariadb-dump --all-databases >kodi.mariadb.dump
+
+mariadb -u kodi -p
+
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 42
+Server version: 10.6.18-MariaDB-0ubuntu0.22.04.1 Ubuntu 22.04
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| MyMusic83          |
+| MyVideos131        |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+6 rows in set (0.001 sec)
+
+MariaDB [(none)]> DROP DATABASE MyMusic83;
+Query OK, 24 rows affected (2.302 sec)
+
+MariaDB [(none)]> DROP DATABASE MyVideos131;
+Query OK, 40 rows affected (2.658 sec)
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.001 sec)
+
+
+mariadb kodi < /mnt/molly/.sql
+
+MariaDB [(none)]> exit;
+Bye
+
+~$ mariadb -u kodi -p
+Enter password: 
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 154
+Server version: 10.6.18-MariaDB-0ubuntu0.22.04.1 Ubuntu 22.04
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show databases;
++--------------------+
+| Database           |
++--------------------+
+| MyMusic82          |
+| MyVideos121        |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+6 rows in set (0.002 sec)
+
+MariaDB [(none)]> exit;
+Bye
+
